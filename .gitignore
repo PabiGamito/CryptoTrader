@@ -1,0 +1,6 @@
+*.pyo
+*.pyc
+.installed.cfg
+bin
+lib
+lib64
