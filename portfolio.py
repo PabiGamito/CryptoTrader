@@ -29,11 +29,11 @@ class Portfolio(object):
 
         return self.holdings
 
-    def buy(self, buying_coin, from_coin, amount, exchange_rate):
-        return self.trade(from_coin, buying_coin, amount, exchange_rate)
+    def buy(self, buying_coin, from_coin, buy_amount, exchange_rate):
+        return self.trade(from_coin, buying_coin, buy_amount*exchange_rate, 1/exchange_rate)
 
-    def sell(selling_coin, to_coin, amount, exchange_rate):
-        return self.trade(selling_coin, to_coin, amount, 1/exchange_rate)
+    def sell(self, selling_coin, to_coin, amount, exchange_rate):
+        return self.trade(selling_coin, to_coin, amount, exchange_rate)
 
     def deposit(self, coin, amount):
         """

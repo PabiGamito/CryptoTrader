@@ -221,5 +221,3 @@ Testing functions
 # get_local_turning_points(df)
 
 # plt.show()
-
-
