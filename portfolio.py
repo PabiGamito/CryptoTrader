@@ -6,6 +6,7 @@ class Portfolio(object):
         and amount of specific coin held in portfolio as value
         """
         self.holdings = initial_holdings
+        self.trades = []
 
     def trade(self, from_coin, to_coin, amount, exchange_rate):
         """
@@ -26,6 +27,15 @@ class Portfolio(object):
                 self.holdings[to_coin] = amount * exchange_rate
         else:
             raise RuntimeError('Amount greater than available balance.')
+
+        # Save trade
+        trade_data = {
+            from_coin: from_coin,
+            to_coin: to_coin,
+            amount: amount,
+            exchange_rate: exchange_rate
+        }
+        trades.append(trade_data)
 
         return self.holdings
 
